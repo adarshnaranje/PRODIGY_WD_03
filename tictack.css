@@ -1,0 +1,139 @@
+/* General body styling */
+body {  
+    font-family: 'Poppins', sans-serif; /* Set font family to Poppins */
+    color: #13cd29; /* Set text color to a shade of green */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange children in a column */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    height: 100vh; /* Set height to 100% of the viewport height */
+    margin: 0; /* Remove default margin */
+}
+
+/* Title styling */
+h1 {
+    text-align: center; /* Center the text */
+}
+
+/* Board styling */
+#board {
+    width: 375px; /* Set board width */
+    height: 375px; /* Set board height */
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(3, 1fr); /* Create 3 columns of equal width */
+    grid-gap: 5px; /* Set gap between grid items */
+    margin-bottom: 20px; /* Add bottom margin */
+}
+
+/* Square styling */
+.square {
+    width: 120px; /* Set square width */
+    height: 120px; /* Set square height */
+    border: 1px solid #31f101; /* Set border color and thickness */
+    background-color: #F5F5F5; /* Set background color */
+    font-size: 40px; /* Set font size */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+/* Square hover effect */
+.square:hover {
+    background-color: #FFFFE0; /* Change background color on hover */
+}
+
+/* End game section styling */
+#endGame {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center content horizontally */
+    width: 100%; /* Set width to 100% */
+}
+
+/* Button styling */
+button {
+    position: relative; /* Set position to relative for positioning inner elements */
+    border: none; /* Remove default border */
+    background: transparent; /* Set background to transparent */
+    padding: 0; /* Remove default padding */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    outline-offset: 4px; /* Offset for the focus outline */
+    transition: filter 250ms; /* Smooth transition for filter */
+    user-select: none; /* Prevent text selection */
+    touch-action: manipulation; /* Optimize for touch devices */
+}
+
+/* Shadow effect for the button */
+.shadow {
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    border-radius: 12px; /* Rounded corners */
+    background: hsl(0deg 0% 0% / 0.25); /* Semi-transparent black */
+    will-change: transform; /* Optimize for transform changes */
+    transform: translateY(2px); /* Initial position */
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1); /* Smooth transition for transform */
+}
+
+/* Edge effect for the button */
+.edge {
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    border-radius: 12px; /* Rounded corners */
+    background: linear-gradient( /* Gradient background */
+        to left,
+        hsl(114, 85%, 57%) 0%,
+        hsl(116, 94%, 45%) 8%,
+        hsl(121, 100%, 32%) 92%,
+        hsl(133, 100%, 16%) 100%
+    );
+}
+
+/* Front styling of the button */
+.front {
+    display: block; /* Block display */
+    position: relative; /* Relative positioning */
+    padding: 12px 27px; /* Padding */
+    border-radius: 12px; /* Rounded corners */
+    font-size: 1.1rem; /* Font size */
+    color: rgb(0, 0, 0); /* Text color */
+    background: hsl(106, 100%, 53%); /* Background color */
+    will-change: transform; /* Optimize for transform changes */
+    transform: translateY(-4px); /* Initial position */
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1); /* Smooth transition for transform */
+}
+
+/* Button hover effects */
+button:hover {
+    filter: brightness(110%); /* Increase brightness on hover */
+}
+
+button:hover .front {
+    transform: translateY(-6px); /* Move up slightly on hover */
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5); /* Smooth transition for transform */
+}
+
+/* Button active effects */
+button:active .front {
+    transform: translateY(-2px); /* Move down slightly on active */
+    transition: transform 34ms; /* Quick transition for transform */
+}
+
+button:hover .shadow {
+    transform: translateY(4px); /* Move shadow down slightly on hover */
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5); /* Smooth transition for transform */
+}
+
+button:active .shadow {
+    transform: translateY(1px); /* Move shadow slightly on active */
+    transition: transform 34ms; /* Quick transition for transform */
+}
+
+/* Button focus effects */
+button:focus:not(:focus-visible) {
+    outline: none; /* Remove outline if not focus-visible */
+}
